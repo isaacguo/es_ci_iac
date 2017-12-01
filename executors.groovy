@@ -1,3 +1,3 @@
-imports jenkins.model.*
+import jenkins.model.*
 Jenkins.instance.setNumExecutors(0)
 
