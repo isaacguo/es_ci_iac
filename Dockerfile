@@ -1,11 +1,12 @@
 FROM jenkins:latest
-MAINTAINER Isaac Guo <yue_guo@keysight.com>
 
-ENV JENKINS_USER admin
-ENV JENKINS_PASS admin
+MAINTAINER Isaac Guo <yue_guo@keysight.com>
 
 
 USER root
+
+COPY executors.groovy /usr/share/jenkins/ref/init.groovy.d/executors.groovy
+
 
 # Install Jenkins Plugins
 RUN /usr/local/bin/install-plugins.sh \
@@ -22,8 +23,6 @@ RUN /usr/local/bin/install-plugins.sh \
 # Skip initial setup
 ENV JAVA_OPTS -Djenkins.install.runSetupWizard=false
 
-
-COPY executors.groovy /usr/share/jenkins/ref/init.groovy.d/
 
 
 
