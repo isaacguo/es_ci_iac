@@ -10,14 +10,27 @@ COPY executors.groovy /usr/share/jenkins/ref/init.groovy.d/executors.groovy
 
 # Install Jenkins Plugins
 RUN /usr/local/bin/install-plugins.sh \
-      bitbucket:1.1.6 \
-      workflow-aggregator:2.4 \
-      docker-workflow:1.8 \
-      artifactory:2.13.0  \
-      msbuild:1.28 \
-      slack:2.3 \
-      copyartifact:1.38.1 \
-      kubernetes
+      bitbucket \
+      workflow-aggregator \
+      docker-workflow \
+      artifactory \
+      msbuild \
+      slack \
+      copyartifact \
+      kubernetes \
+      jobConfigHistory \
+      build-timeout \
+      disk-usage \
+      email-ext \
+      parameterized-trigger \
+      jira \
+      sonar \
+      ec2 \
+      build-monitor-plugin \
+      blueocean \
+      github
+      
+      
 
 
 # Skip initial setup
